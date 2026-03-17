@@ -3,16 +3,22 @@ import { IsNotEmpty, IsString } from "class-validator";
 
 export class CreateTaskDto {
 
-    @ApiProperty()
+    @ApiProperty({
+        description: `name Task`,
+    })
     @IsString()
     @IsNotEmpty()
     name: string;
 
-    @ApiProperty()
+    @ApiProperty({
+        description: `description Task`,
+    })
     @IsNotEmpty()
     description: string;
 
-    @ApiProperty()
+    @ApiProperty({
+        description: `isActive Task`,
+    })
     @IsNotEmpty()
     isActive: boolean;
 }
