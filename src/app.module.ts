@@ -18,7 +18,7 @@ import { TaskModule } from './modules/task/task.module';
       username: 'root',
       password: '',
       database: 'task',
-      entities: [],
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
     TaskModule
