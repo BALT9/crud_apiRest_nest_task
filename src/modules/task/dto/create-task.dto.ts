@@ -1,14 +1,18 @@
+import { ApiProperty } from "@nestjs/swagger";
 import { IsNotEmpty, IsString } from "class-validator";
 
 export class CreateTaskDto {
 
+    @ApiProperty()
     @IsString()
     @IsNotEmpty()
     name: string;
 
+    @ApiProperty()
     @IsNotEmpty()
     description: string;
 
+    @ApiProperty()
     @IsNotEmpty()
     isActive: boolean;
 }

@@ -28,11 +28,16 @@ export class TaskService {
     return task;
   }
 
-  update(id: number, updateTaskDto: UpdateTaskDto) {
-    return `This action updates a #${id} task`;
+  async update(id: number, updateTaskDto: UpdateTaskDto) {
+    const task = await this.findOne(id);
+    Object.assign(task, updateTaskDto)
+    return this.taskRepository.save(task);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} task`;
+  async remove(id: number) {
+    const result = await this.taskRepository.delete(id);
+    if(result.affected === 0){
+      throw new NotFoundException(`La Task con ID ${id} no se encuentra de la BD`)
+    }
   }
 }
