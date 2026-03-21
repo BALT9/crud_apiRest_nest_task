@@ -6,7 +6,10 @@ import { ConfigModule } from '@nestjs/config';
 
 // TypeORM para la conexion con la base de datos (MySQL)
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { TaskModule } from './modules/task/task.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
@@ -21,7 +24,9 @@ import { TaskModule } from './modules/task/task.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    TaskModule
+    TaskModule,
+    AuthModule,
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService],

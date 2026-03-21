@@ -1,0 +1,14 @@
+GET http://localhost:3000/user
+
+###
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "name": "admin2",
+    "email": "admin2@mail.com",
+    "password" : "1234567890"
+}
+
+###
+GET http://localhost:3000/user/1
