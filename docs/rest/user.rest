@@ -11,4 +11,17 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/user/1
+GET http://localhost:3000/user/2
+
+###
+PATCH http://localhost:3000/user/1
+Content-Type: application/json
+
+{
+    "name": "admin5",
+    "email": "admin2@mail.com",
+    "password" : "1234567890"
+}
+
+###
+DELETE http://localhost:3000/user/3
