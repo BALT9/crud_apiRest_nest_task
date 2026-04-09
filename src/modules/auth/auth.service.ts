@@ -14,7 +14,7 @@ export class AuthService {
         const usuario = await this.usersService.findOneByEmail(email);
 
         if (usuario?.password !== password) {
-            throw new UnauthorizedException();
+            throw new UnauthorizedException('Credenciales incorrectas');
         }
 
         const payload = { sub: usuario.id, email: usuario.email };
@@ -24,5 +24,10 @@ export class AuthService {
             usuario: usuario,
             access_token: await this.jwtService.signAsync(payload),
         };
+    }
+
+    async logout(): Promise<{ message: string }> {
+        // Con JWT no hay "logout" real sin blacklist, aquí solo confirmamos
+        return { message: 'Sesión cerrada correctamente' };
     }
 }

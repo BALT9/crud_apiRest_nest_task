@@ -2,6 +2,7 @@ GET http://localhost:3000/
 
 ###
 GET http://localhost:3000/task
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImVtYWlsIjoid2lsbHlAbWFpbC5jb20iLCJpYXQiOjE3NzQzMDA2NTAsImV4cCI6MTc3NDMwMDcxMH0.bEAfGCWISZjShH9KFhxZwp2Etv_u20PV6Q25nkuzVsA
 
 ###
 POST http://localhost:3000/task

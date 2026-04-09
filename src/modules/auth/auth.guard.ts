@@ -20,6 +20,8 @@ export class AuthGuard implements CanActivate {
         if (!token) {
             throw new UnauthorizedException();
         }
+
+        
         try {
             // 💡 Here the JWT secret key that's used for verifying the payload 
             // is the key that was passsed in the JwtModule
