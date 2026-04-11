@@ -21,7 +21,7 @@ import { UserModule } from './modules/user/user.module';
         rejectUnauthorized: false,
       },
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: false,
+      synchronize: true,
     }),
     TaskModule,
     AuthModule,
